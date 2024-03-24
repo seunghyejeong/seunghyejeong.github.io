@@ -98,6 +98,7 @@ _test
 _archive
 uploads
 tmp
+_site
 
 # Vim files to ignore #
 #####################
