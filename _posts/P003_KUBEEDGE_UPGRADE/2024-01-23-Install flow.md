@@ -8,6 +8,7 @@ tags:
   - Kubeedge
   - Migration
   - Workflow
+category: kubeedge
 ---
 
 
