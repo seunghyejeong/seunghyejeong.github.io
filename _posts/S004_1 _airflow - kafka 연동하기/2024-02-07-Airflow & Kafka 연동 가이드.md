@@ -1,3 +1,18 @@
+---
+title: Airflow & Kafka Use Guide
+author: bami jeong
+categories:
+  - Airflow
+  - Kafka
+  - Guide
+tags:
+  - Kafka
+  - Airflow
+  - Data Pipeline
+  - Guide
+  - Data Pipeline
+---
+
 
 ## Table of Contents
 ---
@@ -9,7 +24,7 @@
     5. 버전
 2. Prerequisite
     1. Airflow VM 구축
-    2. Docker 및 Docker Compose 설치 (*Kafka VM only*)
+    2. Docker 및 Docker-Compose 설치 (*Kafka VM only*)
 3.  Guide
     1. Kafka 설치
         1. Docker Compose 파일 작성하기
@@ -45,7 +60,7 @@
 ---
 본 설치 가이드는 Ubuntu 22.04 환경에서 설치하는 것을 기준으로 작성하였다. Airflow, Kafka 각각의 VM을 구축하는 것을 기본으로 총 두 개의 VM이 필요하다.
 ### 2.1 Airflow VM 구축
-### 2.2 Docker 및 Docker Compose 설치 (*Kafka VM only*)
+### 2.2 Docker 및 Docker-Compose 설치 (*Kafka VM only*)
 <br>
 
 ## 3. Guide
@@ -94,7 +109,7 @@ services:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: 'INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT'
-      KAFKA_ADVERTISED_LISTENERS: 'INTERNAL://broker:9092,EXTERNAL://133.186.240.216:19092'
+      KAFKA_ADVERTISED_LISTENERS: 'INTERNAL://broker:9092,EXTERNAL://133.186.152.164:19092'
       KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL      
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
@@ -148,7 +163,7 @@ docker compose exec broker kafka-topics --describe --topic my-topic --bootstrap-
 
 - consumer를 실행한다.
 ```bash
-$ docker exec broker bash
+$ docker compose exec broker bash
 .
 .
 [appuser@94e94072e1ea ~]$ kafka-console-consumer --topic my-topic --bootstrap-server broker:9092
@@ -221,9 +236,6 @@ pip install kafka-python
 
 ![[Pasted image 20240208104432.png]]
 
-```
-"bootstrap servers": ":19092"
-```
 ### 3.3 Airflow-Kafka 연동 테스트
 python 코드로 작성된 Dag 파일을 통해 Kafka와 정상적으로 연동이 되었는지 테스트 한다.
 
@@ -250,7 +262,6 @@ from kafka import KafkaProducer, KafkaConsumer
 from kafka.admin import KafkaAdminClient, NewTopic
 from datetime import datetime
 from airflow.models import TaskInstance
-from kafka.errors import TopicAlreadyExistsError
 
 # Define Kafka broker
 bootstrap_servers = '133.186.240.216:19092'
@@ -265,26 +276,17 @@ def check_connected():
     except Exception as e:
         print(f"Error connecting to Kafka: {str(e)}")
         return False
-        
 # Function to create Kafka topic
 def create_topic():
     admin_client = KafkaAdminClient(bootstrap_servers=bootstrap_servers)
-    existing_topics = admin_client.list_topics()
-    # 토픽이 이미 생성 되어 있다면 생성 되어 있는 토픽을 가져온다.
-    if topic_name in existing_topics:
-        print(f"Topic '{topic_name}' already exists.")
-    else:
-        topic = NewTopic(name=topic_name, num_partitions=1, replication_factor=1)
-        try:
-            admin_client.create_topics([topic])
-            print(f"Topic '{topic_name}' created successfully.")
-        except TopicAlreadyExistsError:
-            print(f"Topic '{topic_name}' already exists.")
+    topic = NewTopic(name=topic_name, num_partitions=1, replication_factor=1)
+    admin_client.create_topics([topic])
+
 
 
 # Function to produce a message to Kafka
 def produce_message():
-    producer = KafkaProducer(bootstrap_servers=bootstrap_servers,linger_ms=20)#실시간 스트리밍이 아닌 20초 간격으로 메세지를 전송한다.
+    producer = KafkaProducer(bootstrap_servers=bootstrap_servers)
     message = f"Hello from Airflow. Message produced at {datetime.now()}"
     producer.send(topic_name, message.encode())
     producer.flush()
@@ -358,7 +360,6 @@ finish_task = PythonOperator(
 
 # Define task dependencies
 check_connected_task >> create_topic_task  >> produce_message_task >> consume_message_task >> finish_task
-
 ```
 
 - Airflow의 UI에 접속하여 생성된 Dag를 확인하고 실행한다.

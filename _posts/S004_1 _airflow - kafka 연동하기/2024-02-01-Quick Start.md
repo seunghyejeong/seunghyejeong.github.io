@@ -1,3 +1,13 @@
+---
+title: What is Kafka?
+author: bami jeong
+categories:
+  - Kafka
+tags:
+  - Research
+  - Data Pipeline
+---
+
 - kafka 설치
 > [linux_ubuntu22.04_설치](https://firststep-de.tistory.com/11)
 
