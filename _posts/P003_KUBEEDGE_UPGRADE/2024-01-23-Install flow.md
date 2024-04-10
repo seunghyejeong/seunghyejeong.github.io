@@ -3,12 +3,12 @@ title: install
 author: bami jeong
 categories:
   - Kubeedge
+permalink: /kubeedge
 tags:
   - install
   - Kubeedge
   - Migration
   - Workflow
-category: kubeedge
 ---
 
 
