@@ -2,8 +2,6 @@
 title: install
 author: bami jeong
 layout: post
-categories:
-  - Kubeedge
 tags:
   - install
   - Kubeedge
