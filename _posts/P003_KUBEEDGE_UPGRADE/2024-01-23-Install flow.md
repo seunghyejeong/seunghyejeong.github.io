@@ -1,8 +1,9 @@
 ---
 title: install
 author: bami jeong
+layout: post
 categories:
-  - P003_KUBEEDGE_UPGRADE
+  - Kubeedge
 tags:
   - install
   - Kubeedge
