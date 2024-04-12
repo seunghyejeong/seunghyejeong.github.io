@@ -80,6 +80,16 @@ defaults:
     values:
       layout: page
       content-type: pages
+  - scope:
+      path: ""
+      type: kubeedge
+    values:
+      layout: post
+      permalink: /kubeedge/:title
+      content-type: post
+      category: "kubeedge"
+      toc: true
+
 
 jekyll-archives:
   enabled: []
