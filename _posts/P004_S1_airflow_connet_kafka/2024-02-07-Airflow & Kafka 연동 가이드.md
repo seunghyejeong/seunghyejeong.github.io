@@ -1,16 +1,13 @@
 ---
 title: Airflow & Kafka Use Guide
 author: bami jeong
-categories:
-  - Airflow
-  - Kafka
-  - Guide
 tags:
   - Kafka
   - Airflow
   - Data Pipeline
   - Guide
   - Data Pipeline
+comments: true
 ---
 
 

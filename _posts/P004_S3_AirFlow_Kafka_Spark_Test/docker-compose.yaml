@@ -1,0 +1,76 @@
+#KAFKA_SPAKR DOCKER_COMPOSE.YAML
+# Copyright VMware, Inc.
+# SPDX-License-Identifier: APACHE-2.0
+
+version: '2'
+
+networks:
+  common-network:
+    external: true
+
+services:
+  spark:
+    image: seunghyejeong/spark:1.0
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+      - SPARK_USER=spark
+      - SPARK_MASTER_OPTS="-Dspark.rpc.message.maxSize=512"
+    ports:
+      - '8080:8080'
+      - '7077:7077'
+    networks:
+      - common-network
+
+  spark-worker:
+    image: seunghyejeong/spark:1.0
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://bami-cluster2:7077
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_WORKER_CORES=1
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+      - SPARK_USER=spark
+      - SPARK_PUBLIC_DNS=bami-cluster2
+      - SPARK_WORKER_OPTS="-Dspark.rpc.message.maxSize=512"
+    networks:
+      - common-network
+
+    spark:
+    image: seunghyejeong/spark:1.0
+    environment:
+      - SPARK_MODE=master
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+      - SPARK_USER=spark
+      - SPARK_MASTER_OPTS="-Dspark.rpc.message.maxSize=512"
+    ports:
+      - '8080:8080'
+      - '7077:7077'
+    networks:
+      - common-network
+
+  spark-worker:
+    image: seunghyejeong/spark:1.0
+    environment:
+      - SPARK_MODE=worker
+      - SPARK_MASTER_URL=spark://bami-cluster2:7077
+      - SPARK_WORKER_MEMORY=1G
+      - SPARK_WORKER_CORES=1
+      - SPARK_RPC_AUTHENTICATION_ENABLED=no
+      - SPARK_RPC_ENCRYPTION_ENABLED=no
+      - SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED=no
+      - SPARK_SSL_ENABLED=no
+      - SPARK_USER=spark
+      - SPARK_PUBLIC_DNS=bami-cluster2
+      - SPARK_WORKER_OPTS="-Dspark.rpc.message.maxSize=512"
+    networks:
+      - common-network

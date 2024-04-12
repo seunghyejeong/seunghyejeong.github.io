@@ -1,0 +1,49 @@
+FROM apache/airflow:2.8.1
+
+ENV AIRFLOW_HOME=/home/airflow/.local
+ENV JAVA_HOME=/usr/lib/jvm/jdk1.8.0_401
+ENV SPARK_HOME=/home/airflow/.local/assembly/target/scala-2.12
+ENV PATH="$PATH:${AIRFLOW_HOME}/bin:${JAVA_HOME}/bin:${SPARK_HOME}/bin"
+
+USER root
+
+RUN mkdir /usr/lib/jvm
+
+COPY jdk-1.8.tar.gz /opt/airflow
+RUN tar xvf jdk-1.8.tar.gz /usr/lib/jvm \
+&& rm jdk-1.8.tar.gz
+
+COPY requirements.txt /
+
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+        vim \
+        openjdk-8-jdk \
+        wget \
+        net-tools \
+        dnsutils \
+        iputils-ping \
+        netcat-openbsd \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/*
+
+RUN mkdir -p /home/airflow/.local/assembly/target 
+
+RUN wget https://archive.apache.org/dist/spark/spark-3.3.0/spark-3.3.0-bin-hadoop3-scala2.13.tgz && \
+    tar xvf spark-3.3.0-bin-hadoop3-scala2.13.tgz --transform='s,^spark-3.3.0-bin-hadoop3-scala2.13,scala-2.12,' -C /home/airflow/.local/assembly/target && \
+    rm spark-3.3.0-bin-hadoop3-scala2.13.tgz \ 
+
+RUN curl -o /home/airflow/.local/assembply/target/jars/kafka-clients-3.3.0.jar https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/3.3.0/kafka-clients-3.3.0.jar
+
+# Download Spark Kafka connector JAR
+RUN curl -o /home/airflow/.local/assembply/target/jars/spark-token-provider-kafka-0-10_2.13-3.3.0.jar https://repo1.maven.org/maven2/org/apache/spark/spark-token-provider-kafka-0-10_2.13/3.3.0/spark-token-provider-kafka-0-10_2.13-3.3.0.jar
+
+# Download Spark SQL Kafka connector JAR
+RUN curl -o /home/airflow/.local/assembply/target/jars/spark-sql-kafka-0-10_2.12-3.3.0.jar https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.13/3.3.0/spark-sql-kafka-0-10_2.13-3.3.0.jar
+
+RUN curl -o /home/airflow/.local/assembply/target/jars/commons-pool2-2.11.0.jar https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.11.0/commons-pool2-2.11.0.jar
+
+USER airflow
+
+COPY requirements.txt /
+RUN pip install --no-cache-dir "apache-airflow==2.8.1" -r /requirements.txt

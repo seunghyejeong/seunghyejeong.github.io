@@ -1,0 +1,14 @@
+# AIRFLOW REQUIREMENTS.TXT
+pandas~=2.0.3
+requests~=2.31.0
+selenium~=4.17.2
+beautifulsoup4~=4.12.3
+lxml~=5.1.0
+virtualenv
+kafka-python~=2.0.2
+apache-airflow-providers-apache-kafka~=1.3.1
+confluent-kafka~=2.3.0
+apache-airflow-providers-apache-spark[cncf.kubernetes]
+py4j==0.10.9.5
+pyspark
+grpcio-status>=1.59.0

@@ -1,13 +1,11 @@
 ---
 title: Airflow Use Guide
 author: bami jeong
-categories:
-  - Airflow
-  - Guide
 tags:
   - Airflow
   - Data Pipeline
   - Guide
+comntes: true
 ---
 
 ## Table of Contents

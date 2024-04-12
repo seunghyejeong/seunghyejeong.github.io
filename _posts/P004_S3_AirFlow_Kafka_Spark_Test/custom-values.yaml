@@ -1,0 +1,56 @@
+images:
+  airflow:
+    repository: seunghyejeong/airflow
+    tag: "2.0"
+    digest: ~
+    pullPolicy: IfNotPresent
+
+# Load Examples
+extraEnv: |
+  - name: AIRFLOW__CORE__LOAD_EXAMPLES
+    value: 'True'
+
+# Webserver configure
+webserver:
+  defaultUser:
+    enabled: true
+    role: Admin
+    username: admin
+    email: admin@example.com
+    firstName: admin
+    lastName: user
+    password: admin
+  service:
+    type: NodePort
+    ports:
+      - name: airflow-ui
+        port: 8080
+        targetPort: 8080
+        nodePort: 31151
+  nodeSelector:
+    node-role.kubernetes.io/control-plane: ""
+  extraVolumeMounts:
+    - name: airflow-dags
+      mountPath: /opt/airflow/dags
+  extraVolumes:
+    - name: airflow-dags
+      persistentVolumeClaim:
+        claimName: airflow-dags
+
+# bind w strogaeClass
+dags:
+  persistence:
+    enabled: true
+    storageClassName: cp-storageclass
+    accessMode: ReadWriteMany
+    size: 5Gi
+workers:
+  persistence:
+    enabled: true
+    storageClassName: cp-storageclass
+    size: 5Gi
+logs:
+  persistence:
+    enabled: true
+    storageClassName: cp-storageclass
+    
