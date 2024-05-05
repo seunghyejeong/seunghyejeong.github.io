@@ -1,0 +1,7 @@
+{
+  "propertiesInDocument": "source",
+  "alwaysUpdateLinks": true,
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true,
+  "attachmentFolderPath": "assets/img"
+}

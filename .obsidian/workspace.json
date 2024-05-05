@@ -1,0 +1,211 @@
+{
+  "main": {
+    "id": "1155f3e189cd6448",
+    "type": "split",
+    "children": [
+      {
+        "id": "febf752ea3be8feb",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "080aa9e9b2336c5c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "gitblog.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "61db4ac131f880fc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/workload/P003_KUBEEDGE_UPGRADE/2024-01-19-workflow.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "03207f00025a820c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "_posts/workload/P003_KUBEEDGE_UPGRADE/2024-01-19-workflow.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "113067bd66a6bdc6",
+    "type": "split",
+    "children": [
+      {
+        "id": "30806afba0128417",
+        "type": "tabs",
+        "dimension": 78.26510721247564,
+        "children": [
+          {
+            "id": "644e4b43f5f3ca67",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "c68139e10c51ba79",
+        "type": "tabs",
+        "dimension": 21.734892787524366,
+        "children": [
+          {
+            "id": "965becc38a120f1f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e5036f6784a058ed",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "94c2e84406040a45",
+    "type": "split",
+    "children": [
+      {
+        "id": "add67a7c5bd8e591",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cbdabc025fe7b28b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "gitblog.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "2eeaeb46146bea47",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "gitblog.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "04edac3dd52bdb15",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "03845e4e6c486a2f",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "gitblog.md"
+              }
+            }
+          },
+          {
+            "id": "8ca9fe280c2c93e8",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:퀵 스위처 열기": false,
+      "graph:그래프 뷰 열기": false,
+      "canvas:새 캔버스 만들기": false,
+      "daily-notes:오늘의 데일리 노트 열기": false,
+      "templates:템플릿 삽입": false,
+      "command-palette:명령어 팔레트 열기": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "080aa9e9b2336c5c",
+  "lastOpenFiles": [
+    "_posts/workload/P003_KUBEEDGE_UPGRADE/2024-01-19-workflow.md",
+    "gitblog.md",
+    "무제 파일 1.md",
+    "template",
+    "_posts/workload/P003_KUBEEDGE_UPGRADE/2024-01-22-workflow.md",
+    "_posts/workload/P003_KUBEEDGE_UPGRADE/1.15/2024-01-19-Decribe_kubeedge_source.md",
+    "_posts/workload/P003_KUBEEDGE_UPGRADE/1.15/2024-01-18-workflow.md",
+    "_posts/workload/P003_KUBEEDGE_UPGRADE/1.15/2024-01-10-workflow.md",
+    "_posts/workload/P003_KUBEEDGE_UPGRADE/1.15/2024-01-11-workflow.md",
+    "_posts/workload/P004_BUILDE_PIPELINE_AIRFLOW/2024-01-25-workflow.md",
+    "_posts/workload/P003_KUBEEDGE_UPGRADE/2024-01-19-사전 조사.md",
+    "_posts/workload/P003_KUBEEDGE_UPGRADE/2024-01-23-Install flow.md",
+    "_posts/2024-04-12-6wway.md",
+    "_posts/workload/P002_OPENSOURCE_RESEARCH/2024-03-01-사전 조사.md",
+    "_pages/about.md",
+    "_pages/archive.md",
+    "_pages/categories.md"
+  ]
+}
