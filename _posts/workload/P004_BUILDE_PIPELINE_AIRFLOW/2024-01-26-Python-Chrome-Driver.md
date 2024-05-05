@@ -7,7 +7,7 @@ comments: true
 tags:
 ---
 
-### import file 
+## import file 
 
 1. 같은 선상에 있는 폴더 내 파일 import
 ```
@@ -34,7 +34,7 @@ from F3 import ddd
 : 코드 받아오는건 나도 잘 모르겠다 .. . . . 결국 이 형식으로 받아오긴 함..
 ![[스크린샷 2024-01-26 오후 5.36.35.png]]
 
-~~### Chrome 연결~~ 
+~~## Chrome 연결~~
 ~~> REF: [Chrome Driver](https://chromedriver.chromium.org/getting-started)
 > Chrome 버전에 맞는 Driver 사용.  드라이버는 같은 폴더 안에 위치시킨다.~~
 
@@ -62,7 +62,7 @@ def get_url_list(**kwargs) :
 ```
 
 
-### ChromeDriver ERROR 
+## ChromeDriver ERROR 
 > 이때는 해당 코드가 Chrome 버전을 무조건 최신으로 받아와 코드가 실행 될 때 설치 하는 코드로 이루어져 있음.![[스크린샷 2024-01-26 오후 5.32.51.png]]
 
 
@@ -119,7 +119,7 @@ selenium.common.exceptions.SessionNotCreatedException: Message: session not crea
 pkill -f chomre
 ```
 
-### Chrome 최신 버전으로 다운
+## Chrome 최신 버전으로 다운
 > dags 폴더 안에 같이 위치 해야함
 > 위의 코드가 자꾸 에러가 나서 최신 드라이버를 다운 받아 진행함.
 > REF: [ChromeDriver](https://chromedriver.chromium.org/getting-started)
@@ -133,7 +133,7 @@ sudo mv chromedriver /usr/local/bin/
 ```
 
 
-### 가상 환경에서 수행 중일때는 virtualenv 
+## 가상 환경에서 수행 중일때는 virtualenv 
 > REF: [가상환경 시작하기](https://jaemunbro.medium.com/python-virtualenv-venv-%EC%84%A4%EC%A0%95-aaf0e7c2d24e),[Virtualenv 설치](https://jaemunbro.medium.com/python-virtualenv-venv-%EC%84%A4%EC%A0%95-aaf0e7c2d24e)
     #airflow_install #airflow_chrome #airflow_vm
 
@@ -165,12 +165,12 @@ source /env/bin/dectivate
 **바로 받아와버리기!!!!!!**
 ![[스크린샷 2024-01-26 오후 5.02.49.png]]
 
-### selenium capabilities = options.to_capabilities() AttributeError: 'NoneType' object has no attribute 'to_capabilities' chrome
+## selenium capabilities = options.to_capabilities() AttributeError: 'NoneType' object has no attribute 'to_capabilities' chrome
 
 - Tasks.py에 Chrome관련 옵션을 다 제외하고 실행했는데 (연결이 잘 안돼서 연결부터 하고보자..)    ![[스크린샷 2024-01-26 오후 5.23.33.png]]
 - 위의 에러가 발생하길래 해석해봤다 ![[스크린샷 2024-01-26 오후 5.25.05.png]]
 - 아마.. 옵션값이 없어서 그런가 . . 했더니 진짜였음ㅋ
-### Web Crawling
+## Web Crawling
 
 - 내가 받아오고 싶은 부분![[스크린샷 2024-01-26 오후 5.18.16.png]]
 
