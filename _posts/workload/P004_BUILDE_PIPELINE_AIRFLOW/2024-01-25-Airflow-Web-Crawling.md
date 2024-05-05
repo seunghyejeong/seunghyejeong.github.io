@@ -7,10 +7,7 @@ comments: true
 tags:
 ---
 
-## Project Name:  Data(not API)를 긁어와 파이프라인 생성해보기
-#### Date: 2024-01-25 11:23 
-#### Tag: #airflow #airflow_install
-##### ref: [왕초보_가이드](https://velog.io/@clueless_coder/Airflow-%EC%97%84%EC%B2%AD-%EC%9E%90%EC%84%B8%ED%95%9C-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC-%EC%99%95%EC%B4%88%EC%8B%AC%EC%9E%90%EC%9A%A9) 
+ref: [왕초보_가이드](https://velog.io/@clueless_coder/Airflow-%EC%97%84%EC%B2%AD-%EC%9E%90%EC%84%B8%ED%95%9C-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC-%EC%99%95%EC%B4%88%EC%8B%AC%EC%9E%90%EC%9A%A9) 
 
 ---
 
