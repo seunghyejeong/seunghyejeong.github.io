@@ -1,26 +1,24 @@
 ---
-
+title: The long adventure to success Pipeline...3) Do I need 'hostaliases' for connected Public? 
+author: bami jeong
+categories: build
+layout: post
+comments: true
+tags:
+  - DataPipeline
+  - Spark
+  - Airflow
+  - Docker
+  - Kafka
 ---
+
+
+
+> [!tip] 
+> 
+> The Answer is "NONONONONONO" 
+
 ## Project Name: Hostaliases 설정 및 spark 코드 작성 
-#### Date: 2024-03-04 09:12 
-#### Tag:
----
-# Contents:
-
-- [b] REF
-> airflow 2.0
-> spark 1.0
-> kafka 1.0
-
-> bami-cluster1
-```
-125.6.39.194
-```
-
-> bami-cluster2
-```
-125.6.39.65
-```
 
 #KAFKA_SPARK_DOCKER_COMPOSE
 ```yaml
@@ -207,3 +205,7 @@ with DAG('spark_connection_check', default_args=default_args, schedule_interval=
 check_connected_kafka_task >> check_spark_conn_task
 
 ```
+
+# 결론
+
+나는 외부와 통신하기 위해서는 Hostaliases를 꼭 써야하는줄 알았다.. 

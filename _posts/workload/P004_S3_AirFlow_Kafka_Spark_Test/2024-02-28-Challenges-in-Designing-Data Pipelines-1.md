@@ -1,9 +1,23 @@
-## Project Name: airflow - {KAFKA-SPARK} 연동 
-
-#### Date: 2024-02-27 17:56 
-#### Tag:
 ---
-# Contents:
+title: The long adventure to designing Pipeline...1) Edit & Analyst DataProccess Source
+author: bami jeong
+categories: build
+layout: post
+comments: true
+tags:
+  - DataPipeline
+  - Spark
+  - Airflow
+  - Docker
+  - Kafka
+---
+
+> [!warning] 
+> 
+> 🫠 매우 긴 챌린지가 시작됩니다.
+> A Lengthy Challenge Begins...
+
+
 
 - [b] REF
 > [예제 코드](https://medium.com/swlh/using-airflow-to-schedule-spark-jobs-811becf3a960)
@@ -11,7 +25,7 @@
 
 ⬇️ 소스 변경 ⬇️
 1. ✅produce 하기: smaple JSON 파일 examplemsg.sh 실행 
-2. ✅spark 서버에서 consume 실행 
+2. ✅spark 서버에서 consume 실행: 데이터 가공 스크립트를 수정한다. 
 3. ✅실행 값 받아오기 
 4. ✅data 저장하기 ( postgres )
 
@@ -475,7 +489,7 @@ Failed to find Spark jars directory (/home/airflow/.local/assembly/target/scala-
 You need to build Spark with the target "package" before running this program.
 ```
 
-그래도 여전히 에러가 나는데 .. ,, [[2024-02-28-workflow#❌❌❌❌❌❌❌❌❌❌❌❌❌]]
+그래도 여전히 에러가 나는데 .. ,, [[workflow(240228)#❌❌❌❌❌❌❌❌❌❌❌❌❌]]
 
 ### Airflow UI에서 Connection 만들기 
 
@@ -578,7 +592,7 @@ check_connedted_spark_task = PythonOperator(
 airflow에서는 spark connect만 하고 
 spark container에서 Spark Session 실행 하는 거 아닐까.;;;;;;;;;;;;;;;;;;;;;;;;*
 
-정답은 : [[2024-02-29-workflow]]
+정답은 : [[workflow(240229)]]
 
 
 

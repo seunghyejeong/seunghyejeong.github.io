@@ -1,5 +1,5 @@
 ---
-title: Use Kafka Function
+title: Install Kafka and Use Funcitons
 author: bami jeong
 categories: Startups
 layout: post
@@ -119,10 +119,6 @@ I have no name!@ffe4ab99902c:/bin$ kafka-console-consumer.sh --topic quickstart-
 this is my first event bami
 bami is my friend
 ```
-
-
-
-
 
 ## 실습: Cluster 만들기
 
@@ -297,10 +293,6 @@ cute
 mine
 ```
 
-
-
-
-
 --- 
 # Python & Kafa Cluster
 ## Python library를 활용한다
@@ -314,12 +306,7 @@ pip install kafka-python
 ```
 
 
-
-
-
 ---
-
-
 
 # Airflow와의 통합 .. 
 

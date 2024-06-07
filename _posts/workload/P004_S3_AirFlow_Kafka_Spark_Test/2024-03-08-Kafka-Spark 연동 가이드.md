@@ -2,7 +2,13 @@
 2. Kafka 설치
 ---
 
-# *STEP 1*
+
+> [!NOTE]
+> 
+> # 이 가이드는 Spark, Kafka가 어떻게 동작하는지에 대한 가이드 라인으로 내부 테스트용으로 쓰여졌다. 
+> 절대 데이터 파이프라인의 완성본이 아니다.
+> 스토리라인은 Airflow 설치, Spark / Kafka를 도커로 띄운 후 Spark Container에서 직접  데이터 가공 코드를 실행하였고 Kafka Container에서 메세지 로그를 확인 하였다.
+
 ## Kafka Resource
 #KAFKA_RESOURCE
 ### docker-compose.yaml
@@ -151,13 +157,13 @@ docker compose up -d
 ## Create topic *kafka*
 
 ```bash
-sudo docker exec broker kafka-topics --create --topic devices --bootstrap-server broker:9092 --replication-factor 1 --partitions 1
+sudo docker compose exec broker kafka-topics --create --topic devices --bootstrap-server broker:9092 --replication-factor 1 --partitions 1
 ```
 
 - 확인하기
 
 ```bash
-sudo docker exec broker kafka-topics --describe --topic devices --bootstrap-server broker:9092 
+sudo docker compose exec broker kafka-topics --describe --topic devices --bootstrap-server broker:9092 
 ```
 
 ## Consumer topic *spark*
@@ -222,6 +228,7 @@ streaming_df = spark \
     .format("kafka") \
     .options(**kafka_params) \
     .load()
+
 # Parse JSON messages
 json_df = streaming_df.selectExpr("CAST(value AS STRING) AS value") \
 
@@ -293,7 +300,6 @@ kafka-console-producer --topic devices --bootstrap-server broker:9092
 ```bash
 {"eventId": "e3cb26d3-41b2-49a2-84f3-0156ed8d7502", "eventOffset": 10001, "eventPublisher": "device", "customerId": "CI00103", "data": {"devices": [{"deviceId": "D001", "temperature": 15, "measure": "C", "status": "ERROR"}, {"deviceId": "D002", "temperature": 16, "measure": "C", "status": "SUCCESS"}]}, "eventTime": "2023-01-05 11:13:53.643364"}
 ```
-{"id": 2, "name": "bami", "age": "7"}
 
 ### spark
 

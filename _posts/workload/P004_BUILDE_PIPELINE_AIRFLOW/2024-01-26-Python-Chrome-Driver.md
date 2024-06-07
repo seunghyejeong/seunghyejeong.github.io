@@ -10,7 +10,8 @@ tags:
 ## import file 
 
 1. 같은 선상에 있는 폴더 내 파일 import
-```
+
+```bash
 - F1
 |- aaa.py
 |- bbb.py
@@ -39,6 +40,7 @@ from F3 import ddd
 > Chrome 버전에 맞는 Driver 사용.  드라이버는 같은 폴더 안에 위치시킨다.~~
 
 이건 실패한 코드.
+
 ```python
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
@@ -58,7 +60,6 @@ def get_url_list(**kwargs) :
     browser.get("https://github.com/")
     time.sleep(5)
     browser.auit()
-
 ```
 
 
@@ -67,6 +68,7 @@ def get_url_list(**kwargs) :
 
 
 - error
+
 ```bash
 [2024-01-25T16:34:21.560+0900] {taskinstance.py:2698} ERROR - Task failed with exception
 Traceback (most recent call last):
@@ -126,6 +128,7 @@ pkill -f chomre
 > [최신드라이버](https://googlechromelabs.github.io/chrome-for-testing/)
 
 - 여기서는 코드를 좀 수정함. 위의 Ref를 참조
+
 ```bash
 wget https://chromedriver.storage.googleapis.com/99.0.4844.51/chromedriver_linux64.zip
 unzip chromedriver_linux64.zip
@@ -134,6 +137,7 @@ sudo mv chromedriver /usr/local/bin/
 
 
 ## 가상 환경에서 수행 중일때는 virtualenv 
+
 > REF: [가상환경 시작하기](https://jaemunbro.medium.com/python-virtualenv-venv-%EC%84%A4%EC%A0%95-aaf0e7c2d24e),[Virtualenv 설치](https://jaemunbro.medium.com/python-virtualenv-venv-%EC%84%A4%EC%A0%95-aaf0e7c2d24e)
     #airflow_install #airflow_chrome #airflow_vm
 
@@ -141,11 +145,13 @@ sudo mv chromedriver /usr/local/bin/
 - 내가 가상환경으로 사용 할 Directory로 이동해 실행해준다.
 
 1. 가상 환경 설치 
+
 ```bash
 python3 -m pip install --user -U virtualenv
 ```
 
 2. Python 환경 만들기
+
 ```bash
 cd {WANNABE_VIRTUAL_ENV_DIR}
 virtualenv env
@@ -153,11 +159,13 @@ virtualenv env
 ```
 
 3. 활성화
+
 ```bash
 source /env/bin/activate
 ```
 
 4. 비활성화
+
 ```bash
 source /env/bin/dectivate
 ```
@@ -170,17 +178,19 @@ source /env/bin/dectivate
 - Tasks.py에 Chrome관련 옵션을 다 제외하고 실행했는데 (연결이 잘 안돼서 연결부터 하고보자..)    ![[스크린샷 2024-01-26 오후 5.23.33.png]]
 - 위의 에러가 발생하길래 해석해봤다 ![[스크린샷 2024-01-26 오후 5.25.05.png]]
 - 아마.. 옵션값이 없어서 그런가 . . 했더니 진짜였음ㅋ
+
 ## Web Crawling
 
 - 내가 받아오고 싶은 부분![[스크린샷 2024-01-26 오후 5.18.16.png]]
-
 - Elments값 찾기![[스크린샷 2024-01-26 오후 5.19.34.png]]![[스크린샷 2024-01-26 오후 5.21.06.png]]
 - css코드 
+
 ```css
 <a title="architecture" aria-label="architecture, (Directory)" class="Link--primary" href="/K-PaaS/container-platform/tree/master/architecture">architecture</a>
 ```
 
 - 그렇게 해서 작성된 코드
+
 ```python
 url_list = browser.find_elements(By.CLASS_NAME, 'Link--primary')
 link = url.get_attribute('href')

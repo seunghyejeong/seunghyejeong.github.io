@@ -1,11 +1,18 @@
 ---
+title: Kafka,Spark Containers are linked. Test Origin code of 'data proccess'
+author: bami jeong
+categories: build
+layout: post
+comments: true
+tags:
+  - DataPipeline
+  - Spark
+  - Airflow
+  - Docker
+  - Kafka
+---
 
----
-## Project Name: 
-#### Date: 2024-02-26 09:14 
-#### Tag:
----
-# Contents:
+
 
 - [b] REF
 > [docker network로 컨테이너 연결하기](https://towardsdatascience.com/end-to-end-data-engineering-system-on-real-data-with-kafka-spark-airflow-postgres-and-docker-a70e18df4090)

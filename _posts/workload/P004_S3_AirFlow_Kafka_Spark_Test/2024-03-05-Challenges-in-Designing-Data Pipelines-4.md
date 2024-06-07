@@ -1,14 +1,18 @@
 ---
-
+title: The long adventure to success Pipeline...4
+author: bami jeong
+categories: build
+layout: post
+comments: true
+tags:
+  - DataPipeline
+  - Spark
+  - Airflow
+  - Docker
+  - Kafka
 ---
-## Project Name: spark builder 만들기 
-#### Date: 2024-03-05 09:43 
-#### Tag:
----
-# Contents:
 
-- [b] REF
->
+
 
 Connetion type: spark_conn
 

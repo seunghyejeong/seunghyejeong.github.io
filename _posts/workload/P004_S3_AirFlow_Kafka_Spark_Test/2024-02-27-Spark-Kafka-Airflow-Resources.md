@@ -1,6 +1,16 @@
-```
-125.6.40.186
-```
+---
+title: Spark, Kafka, Airflow Resources
+author: bami jeong
+categories: build
+layout: post
+comments: true
+tags:
+  - DataPipeline
+  - Spark
+  - Airflow
+  - Docker
+  - Kafka
+---
 # Kafka Resource
 
 ```yaml

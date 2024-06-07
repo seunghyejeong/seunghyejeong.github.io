@@ -1,11 +1,17 @@
 ---
+title: This is whole steps rebuilding code of Data Proccessing
+author: bami jeong
+categories: Build
+layout: post
+comments: true
+tags:
+  - DataPipeline
+  - Spark
+  - Airflow
+  - Docker
+  - Kafka
+---
 
----
-## Project Name: 
-#### Date: 2024-02-22 09:58 
-#### Tag:
----
-# Contents:
 
 - [b] REF
 > https://taaewoo.tistory.com/32?category=887744
@@ -20,6 +26,7 @@
 > kafka-clients-3.4.1
 > spark-token-provider-kafka-0-10_2.13-3.4.2
 > spark-sql-kafka-0-10_2.13-3.4.2
+> 
 # Spark Dockerfile / docker-compose.yaml Source
 
 ##### custom images
@@ -100,6 +107,19 @@ services:
 1. 토픽 생성
 ```bash
 docker exec  -ti broker kafka-topics --create --topic devices --bootstrap-server broker:9092 --replication-factor 1 --partitions 1
+```
+
+
+- topic 생성
+```bash
+docker compose exec broker kafka-topics --create --topic kafka-topic --bootstrap-server broker:9092 --replication-factor 1 --partitions 1
+```
+
+- topic 확인 
+```bash
+[appuser@broker ~]$ docker compose exec broker kafka-topics --list --bootstrap-server  {EXTERNAL_IP}:19092
+__consumer_offsets
+my-topic
 ```
 
 ### KAFKA Container 

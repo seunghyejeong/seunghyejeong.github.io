@@ -1,27 +1,21 @@
 ---
-
+title: The long adventure to success Pipeline...2) Rebuild
+author: bami jeong
+categories: build
+layout: post
+comments: true
+tags:
+  - DataPipeline
+  - Spark
+  - Airflow
+  - Docker
+  - Kafka
 ---
-## Project Name: Airflow Dag 작성 
-#### Date: 2024-02-29 10:18 
-#### Tag:
----
-# Contents:
 
 # *Airflow 구축 목적은 한 곳에서 여러 Job을 관리하기 위함*
 
-- [b] REF
-
 - [?] 지금까지는 Kafka와 Spark를 테스트 하기 위에서 Cluster2의 각 Container에 접속하여 코드를 실행했음. 그리고 Spark와 Kafka가 잘 연동 되는 것을 확인 후 airflow에 Pipeline을 작성 하려고 하는데 Airflow에서 Spark와 Kafka를 관리 하는 데에서 궁금했던 것이, *Airflow에서 Kafka와 Spark의 코드를 모두 가져와서 실행 하는 건지?* 아니면 *Airflow에서는 실행하라는 명령을 날린 후 Kafka, Spark 각 컨테이너에서 작업을 수행 하는 건지* .. 
-- [k] 그러나 담은 전자. 왜냐면 Airflow Pipiline Dag을 작성하는 이유 자체가 하나의 관리 폼에서 여러 Job을 수행하기 위함인 것이고, 유지 보수를 위해서는 무조건 한 곳에서 가능해야 하기 때문, 후자는 유지보수를 하기 위해서는 만약 코드 하나를 바꾸기 위해서 어떤 컨테이너에 접속하여 수정을 한 후 테스트를 해야 하는 번거로움이 있음.  그래서  `Spark`, `Kafka`를 위해 Airflow의 `Dockerfile`, `requirements.txt`를 다시 커스텀 하여 진행 하는것이 *맞음*! 
-
-- kafka spark 
-```
-125.6.40.186
-```
-- airflow 
-```
-133.186.244.202
-```
+- [k] 그러나 담은 전자. 왜냐면 Airflow Pipeline Dag을 작성하는 이유 자체가 하나의 관리 폼에서 여러 Job을 수행하기 위함인 것이고, 유지 보수를 위해서는 무조건 한 곳에서 가능해야 하기 때문, 후자는 유지보수를 하기 위해서는 만약 코드 하나를 바꾸기 위해서 어떤 컨테이너에 접속하여 수정을 한 후 테스트를 해야 하는 번거로움이 있음.  그래서  `Spark`, `Kafka`를 위해 Airflow의 `Dockerfile`, `requirements.txt`를 다시 커스텀 하여 진행 하는것이 *맞음*! 
 # Airflow Packaging
 
 ## Dockerfile 
@@ -68,7 +62,7 @@ RUN curl -o /home/ubuntu/spark-sql-kafka-0-10_2.12-3.3.0.jar https://repo1.maven
 RUN curl -o/home/ubuntu/commons-pool2-2.11.0.jar https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.11.0/commons-pool2-2.11.0.jar
 ```
 
-[[2024-02-29-workflow#모든게 완벽했는데,,, *scala가 없구나?*]]
+[[workflow(240229)#모든게 완벽했는데,,, *scala가 없구나?*]]
 ### Scala를 설치해보자.
 
 ```dockerfile
@@ -289,10 +283,8 @@ logs:
 ```
 
 # 모든게 완벽했는데,,,  *scala가 없구나?*
-[[2024-02-20-workflow]]
+[[workflow(240220)]]
 docker compose로 하다보니까.. 이 scala를 깔아줘야하는걸 까먹었구나 승혜야
 대단하구나\\\
 
-
-
-kubectl get pod -n airflow | grep airflow-webserver | awk '{print $1}'
+- [Q] 너무 웃기지 않나 ?  자동으로 배포하기 위해서 컨테이너로 띄우는건데 이 '자동'을 위해서 scala를 기본적으로 배포 해야 한다는거.. 너무 비효율 적이라고 생각한다.  

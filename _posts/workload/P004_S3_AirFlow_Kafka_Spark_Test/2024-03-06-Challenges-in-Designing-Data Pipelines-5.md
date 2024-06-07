@@ -1,22 +1,17 @@
 ---
-
+title: The long adventure to success Pipeline...4) going to be crazy. Spakr is already exsist on Docker!
+author: bami jeong
+categories: build
+layout: post
+comments: true
+tags:
+  - DataPipeline
+  - Spark
+  - Airflow
+  - Docker
+  - Kafka
 ---
-## Project Name: 
-#### Date: 2024-03-06 09:08 
-#### Tag:
----
-# Contents:
 
-- [b] REF
->
-
-|               |                         |                               |                      |                         |                              |     |
-| ------------- | ----------------------- | ----------------------------- | -------------------- | ----------------------- | ---------------------------- | --- |
-| bami-cluster1 | Ubuntu Server 22.04 LTS | 172.16.11.73, 133.186.134.204 | r2.c2m8 (2vCPU, 8GB) | cp-nhn-common-key       | kr-pub-b                     |     |
-|               |                         |                               | bami-cluster2        | Ubuntu Server 22.04 LTS | 172.16.11.52, 133.186.134.16 |     |
-|               |                         |                               |                      |                         |                              |     |
-/home/share/nfs 172.16.11.73(rw,no_root_squash,async)
-/home/share/nfs 172.16.11.52(rw,no_root_squash,async)
 
 Docker image
 spark 1:0
@@ -25,16 +20,9 @@ airflow 2.0
 
 openjdk-8-jdk
 
-짜바를 수동으로 설치.. 
+자바를 수동으로 설치.. 
 
-```bash
-125.6.39.194:31151
-```
-
-```
-125.6.39.65
-```
-
+# Airflow 설치 
 
 ```dockerfile
 FROM apache/airflow:2.8.1
@@ -110,7 +98,7 @@ grpcio-status>=1.59.0
 2. 네트워크 통신 확인만 하는 간단한 파이선 코드 
 3. airflow connections에 정의된 spark 정보를 받아 올 것 
 
-pyspark
+# Spark Connect 코드 
 ```python
 import pyspark
 from airflow.providers.apache.spark.hooks.spark_connect import SparkConnectHook
@@ -148,15 +136,11 @@ if __name__ == "__main__":
     check_spark_airflow_connection()
 
 ```
-즞같다
 
+# 실패 요인 ..
 이미 나는 스파크 마스터가 컨테이너로 띄워져 있었기 때문에 생성이 안되는거였다 .ㅋ 
-도커로 다른 노드에 스파크를 실행 시켰으면 
-만들었으면
-그 생성된 스파크를
-가지고 왔어야
-했다
-하ㅏㅎ하ㅏㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ하하ㅏ하하하하하하하하하하핳하ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ
+도커로 다른 노드에 스파크를 실행 시켰으면  이미 만들었으면 그 생성된 스파크를 가지고 왔어야 했다
+하ㅏㅎ하ㅏㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ하하ㅏ하하하하하하하하하하핳하ㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏㅏ CRAZY
 https://sparkbyexamples.com/pyspark/pyspark-what-is-sparksession/
 # 최최최뢰최치최초ㅗ치치ㅗ초초치ㅗ치ㅗ치종
 
@@ -264,11 +248,6 @@ if __name__ == "__main__":
     check_spark_airflow_connection()
 ```
 
-![[Pasted image 20240306154812.png]]
-
-![[Pasted image 20240306154725.png]]
-
-spark_mode는 client 
-
-![[Pasted image 20240306175439.png]]
-
+# 여기까지 진행 했을 때 
+`pyspark` 명령어 및  `spark_submit` 명령어가 *중복* 으로 실행되었다. 
+SparkSession으로도 설치가 되고 Airflow에도 설치가 되고 Local에도 설치가 되었기 때문이다.

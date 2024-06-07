@@ -30,6 +30,9 @@ tags:
 > requests                                 2.31.0
 > virtualenv                               20.25.0
 
+# airflow에 필요한 도커 파일을 만든다. 도커 파일은 Airflow 운영에 필요한 PyPI 패키지 설치가 포함 되어 있다. 
+# 또한 Ingress를 적용하여 Container Platform의 Portal에 연동 되도록 수정 하였다.
+
 ## Install PyPI package
 
 ```Dockerfile
@@ -276,5 +279,3 @@ dags:
     enabled: false
 ```
 
-  
-133.186.240.216

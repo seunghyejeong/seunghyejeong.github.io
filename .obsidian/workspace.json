@@ -13,31 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "gitblog.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "61db4ac131f880fc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_posts/workload/P003_KUBEEDGE_UPGRADE/2024-01-19-workflow.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "03207f00025a820c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "_posts/workload/P003_KUBEEDGE_UPGRADE/2024-01-19-workflow.md",
+                "file": "_posts/workload/P005_Airflow-Kafka-Spark_Platform_explode/2024-04-01-workflow.md",
                 "mode": "source",
                 "source": false
               }
@@ -55,7 +31,7 @@
       {
         "id": "30806afba0128417",
         "type": "tabs",
-        "dimension": 78.26510721247564,
+        "dimension": 78.26510721247563,
         "children": [
           {
             "id": "644e4b43f5f3ca67",
@@ -72,7 +48,7 @@
       {
         "id": "c68139e10c51ba79",
         "type": "tabs",
-        "dimension": 21.734892787524366,
+        "dimension": 21.73489278752437,
         "children": [
           {
             "id": "965becc38a120f1f",
@@ -101,7 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 398.5
   },
   "right": {
     "id": "94c2e84406040a45",
@@ -117,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "gitblog.md",
+                "file": "_posts/workload/P005_Airflow-Kafka-Spark_Platform_explode/2024-04-01-workflow.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "gitblog.md",
+                "file": "_posts/workload/P005_Airflow-Kafka-Spark_Platform_explode/2024-04-01-workflow.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -157,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "gitblog.md"
+                "file": "_posts/workload/P005_Airflow-Kafka-Spark_Platform_explode/2024-04-01-workflow.md"
               }
             }
           },
@@ -188,24 +164,47 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "080aa9e9b2336c5c",
+  "active": "644e4b43f5f3ca67",
   "lastOpenFiles": [
-    "_posts/workload/P003_KUBEEDGE_UPGRADE/2024-01-19-workflow.md",
-    "gitblog.md",
-    "무제 파일 1.md",
-    "template",
-    "_posts/workload/P003_KUBEEDGE_UPGRADE/2024-01-22-workflow.md",
-    "_posts/workload/P003_KUBEEDGE_UPGRADE/1.15/2024-01-19-Decribe_kubeedge_source.md",
-    "_posts/workload/P003_KUBEEDGE_UPGRADE/1.15/2024-01-18-workflow.md",
-    "_posts/workload/P003_KUBEEDGE_UPGRADE/1.15/2024-01-10-workflow.md",
-    "_posts/workload/P003_KUBEEDGE_UPGRADE/1.15/2024-01-11-workflow.md",
-    "_posts/workload/P004_BUILDE_PIPELINE_AIRFLOW/2024-01-25-workflow.md",
-    "_posts/workload/P003_KUBEEDGE_UPGRADE/2024-01-19-사전 조사.md",
-    "_posts/workload/P003_KUBEEDGE_UPGRADE/2024-01-23-Install flow.md",
-    "_posts/2024-04-12-6wway.md",
-    "_posts/workload/P002_OPENSOURCE_RESEARCH/2024-03-01-사전 조사.md",
-    "_pages/about.md",
-    "_pages/archive.md",
-    "_pages/categories.md"
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-03-08-Kafka-Spark 연동 가이드.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-03-07-workflow.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-03-06-Challenges-in-Designing-Data Pipelines-5.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-03-05-Challenges-in-Designing-Data Pipelines-4.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-03-04-Challenges-in-Designing-Data Pipelines-3.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-02-29-Challenges-in-Designing-Data Pipelines-2.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-02-28-Challenges-in-Designing-Data Pipelines-1.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-02-27-Spark-Kafka-Airflow-Resources.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-02-26-linked-kafka-spark-with-dataproccess-code.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-02-23-Just-think-about-How-to-operate-'Data Pipeline'.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-02-22-This-is-the-whole-things-of-dataPipeline-code.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-02-21-install-spark-local.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-02-20-what-is-spark.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-02-28-workflow.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-02-27-workflow.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-02-26-workflow.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-02-23-workflow.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-02-22-workflow.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-02-21-workflow.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-02-20-workflow.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-03-11-workflow.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-03-28-workflow.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-03-06-workflow.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-03-08-workflow.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-03-11-scala version.md",
+    "_posts/workload/P004_S3_AirFlow_Kafka_Spark_Test/2024-03-14-workflow.md",
+    "_posts/workload/P004_BUILDE_PIPELINE_AIRFLOW/Airflow 활용 Guide.pdf",
+    "_site/assets/img/post_images/Pasted image 20240509171233.png",
+    "_site/assets/img/post_images/Pasted Image 20240507161346_374.png",
+    "_site/assets/img/post_images/Pasted image 20240502153007.png",
+    "_site/assets/img/post_images/Pasted image 20240430164528.png",
+    "_site/assets/img/post_images/Pasted image 20240430164227.png",
+    "_site/assets/img/post_images/Pasted image 20240228161055.png",
+    "_site/assets/img/post_images/Pasted image 20240228160941.png",
+    "_site/assets/img/post_images/Pasted image 20240228151809.png",
+    "_site/assets/img/post_images/Pasted image 20240228151625.png",
+    "_site/assets/img/post_images/Pasted image 20240227111004.png",
+    "_site/assets/img/post_images",
+    "_site/assets/img/무제 폴더",
+    "template"
   ]
 }

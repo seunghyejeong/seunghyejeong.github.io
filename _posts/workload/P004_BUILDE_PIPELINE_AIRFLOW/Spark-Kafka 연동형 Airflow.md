@@ -242,8 +242,3 @@ airflow db init
 ```bash
 airflow scheduler
 ```
-
-- [k] 서버 실행 화면![[Pasted image 20240321111240.png]]
-- [k] Web Server UI 화면
-    *{MASTER_NODE_IP}:8080 접속*
-    ![[Pasted image 20240321111252.png]]

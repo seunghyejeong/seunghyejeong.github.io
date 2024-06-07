@@ -1,17 +1,25 @@
 ---
+title: Install Spark in Local
+author: bami jeong
+categories: Build
+layout: post
+comments: true
+tags:
+  - DataPipeline
+  - Spark
+  - Airflow
+  - Docker
+  - Kafka
+---
 
----
-## Project Name: Scala, Spark 설치
-#### Date: 2024-02-21 09:21 
-#### Tag:
----
-# Contents:
+
 
 - [b] REF
 > [scala,spark,maven 설치(linux환경)](https://it-sunny-333.tistory.com/10)
 > [spark consumer로 활용하기](https://taaewoo.tistory.com/32)
 > [spark 간단 구축하기](https://ampersandor.tistory.com/11)
 > [HDFS에 데이터 구축하기(origins)](https://taaewoo.tistory.com/32?category=887744)
+
 
 
 # Docker build
@@ -47,9 +55,13 @@ source ~/.bashrc
 docker build -t spark:3.4.2 -f kubernetes/dockerfiles/spark/Dockerfile .
 ```
 
-> Dockerfile? ❌❌❌❌❌
+## Custom Dockerfile
+
+### 1차 시도: Spark 공식 Docs에 있는 이미지를 받아와 만들었다. 
+
+> Dockerfile
 ```Dockerfile
-version: "3.4"
+version: "3.5"
 services:
   spark-master:
     image: spark:3.4.2
@@ -62,7 +74,7 @@ services:
     environment:
       - SPARK_MASTER_HOST="spark://spark-master:7077" 
       - SPARK_MASTER_WEBUI_PORT=8080 
-      - SPARK_PUBLIC_DNS=133.186.217.113
+      - SPARK_PUBLIC_DNS={MASTER_IP}
       - SPARK_LOCAL_IP=172.16.11.59
       - SPARK_LOG_DIR=/opt/spark/logs
 ```
@@ -90,23 +102,10 @@ SPARK_PUBLIC_DNS, to set the public DNS name of the driver program
 
 ```
 
-```sh
-# Options for the daemons used in the standalone deploy mode
-- SPARK_MASTER_HOST, to bind the master to a different IP address or hostname
-- SPARK_MASTER_PORT / SPARK_MASTER_WEBUI_PORT, to use non-default ports for the master
-- SPARK_MASTER_OPTS, to set config properties only for the master (e.g. "-Dx=y")
-- SPARK_WORKER_CORES, to set the number of cores to use on this machine
-- SPARK_WORKER_MEMORY, to set how much total memory workers have to give executors (e.g. 1000m, 2g)
-- SPARK_WORKER_PORT / SPARK_WORKER_WEBUI_PORT, to use non-default ports for the worker
-- SPARK_WORKER_DIR, to set the working directory of worker processes
-- SPARK_WORKER_OPTS, to set config properties only for the worker (e.g. "-Dx=y")
-- SPARK_DAEMON_MEMORY, to allocate to the master, worker and history server themselves (default: 1g).
-- SPARK_HISTORY_OPTS, to set config properties only for the history server (e.g. "-Dx=y")
-- SPARK_SHUFFLE_OPTS, to set config properties only for the external shuffle service (e.g. "-Dx=y")
-- SPARK_DAEMON_JAVA_OPTS, to set config properties for all daemons (e.g. "-Dx=y")
-- SPARK_DAEMON_CLASSPATH, to set the classpath for all daemons
-- SPARK_PUBLIC_DNS, to set the public dns name of the master or workers
-```
+> [!fail] 
+> 이 도커파일에는 spark-worker가 없다. 그리고 굳이 필요 없는 환경 변수 값을 넣었다. docker compose의 enviroment를 설정 했으면 default conf, spark env를 설정 할 필요 없다.
+
+
 
 # ❌❌❌❌❌StandAlone
 
@@ -116,14 +115,14 @@ SPARK_PUBLIC_DNS, to set the public DNS name of the driver program
 
 spark://bami-cluster2.novalocal:7077
 
-https://taaewoo.tistory.com/18?category=887744
+https://taaewoo.tistory.coㅋㅌㅊ 퓨m/18?category=887744
 '
 akfhrmpTd미ㅏㄹ얼미ㅏ넝ㄹ니ㅏㅇ'ㅓㄹ
 
 접속하면 되기는 한데;
 
 
-# docker compose by bitnami
+# docker comp ose by bitnami
 
 ```dockerfile
 # Copyright VMware, Inc.

@@ -15,7 +15,7 @@ tags:
 
 - airflow url
 ```
-125.6.37.69:8080
+{MASTER_IP}:8080
 ```
 
 - Topic 만들기 
@@ -78,7 +78,7 @@ produce_task = ProduceToTopicOperator(
 
 ### Airflow Dag와 연결 
 
-- [?] 연결 확인 용도로 쓰임..??
+- [?] 연결 확인 용도로 쓰이는건가 ? 
 - tasks
 ```python
 # Example of using KafkaConsumerOperator
@@ -136,16 +136,6 @@ with DAG('kafka_consumer_example',
 
     consume_task
 ```
-
-bin/kafka-topics.sh --create --topic quickstart-events --bootstrap-server localhost:9092
-
-advertised.listeners = PLAINTEXT://localhost:9092
-broker.id = 1
-	compression.type = producer
-listener.security.protocol.map = CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
-	listeners = PLAINTEXT://:9092,CONTROLLER://:9093
-
-
 
 # Airflow 연동에 필요한 패키지 
 

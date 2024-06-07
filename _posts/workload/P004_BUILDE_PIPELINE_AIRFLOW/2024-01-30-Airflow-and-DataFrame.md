@@ -9,6 +9,7 @@ tags:
 
 
 I only want to get text from this html source, but please make a code that brings multiple titles in a repetition sentence use python 
+
 ```html
 <a title="Readme.md" aria-label="Readme.md, (File)" class="Link--primary" href="/K-PaaS/container-platform/blob/master/architecture/Readme.md">Readme.md</a>
 ```
@@ -180,18 +181,16 @@ def get_url_list(**kwargs) :
 ```
 <tr class="react-directory-row undefined" id="folder-row-0"><td class="react-directory-row-name-cell-small-screen" colspan="2"><div class="react-directory-filename-column"><svg aria-hidden="true" focusable="false" role="img" class="icon-directory" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1H1.75Z"></path></svg><div class="overflow-hidden"><h3><div class="react-directory-truncate"><a title="architecture" aria-label="architecture, (Directory)" class="Link--primary" href="/K-PaaS/container-platform/tree/master/architecture">architecture</a></div></h3></div></div></td><td class="react-directory-row-name-cell-large-screen" colspan="1"><div class="react-directory-filename-column"><svg aria-hidden="true" focusable="false" role="img" class="icon-directory" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1H1.75Z"></path></svg><div class="overflow-hidden"><h3><div class="react-directory-truncate"><a title="architecture" aria-label="architecture, (Directory)" class="Link--primary" href="/K-PaaS/container-platform/tree/master/architecture">architecture</a></div></h3></div></div></td><td class="react-directory-row-commit-cell"><div><div class="react-directory-commit-message"><a data-pjax="true" title="Renaming K-PaaS" class="Link--secondary" href="/K-PaaS/container-platform/commit/3b9c417d770cf5498607aaee64835159ba54d5ee">Renaming K-PaaS</a></div></div></td><td><div class="react-directory-commit-age"><relative-time class="RelativeTime-sc-lqbqy3-0" datetime="2023-09-06T13:05:55.000+09:00" tense="past" title="Sep 6, 2023, 1:05 PM GMT+9"></relative-time></div></td></tr>
 ```
-i wanna get tr > td > div > h3 > a`s title 
-
-
+> i wanna get tr > td > div > h3 > a`s titls....
 
 
 ```
 <tr class="react-directory-row undefined" id="folder-row-0"><td class="react-directory-row-name-cell-small-screen" colspan="2"><div class="react-directory-filename-column"><svg aria-hidden="true" focusable="false" role="img" class="icon-directory" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1H1.75Z"></path></svg><div class="overflow-hidden"><h3><div class="react-directory-truncate"><a title="architecture" aria-label="architecture, (Directory)" class="Link--primary" href="/K-PaaS/container-platform/tree/master/architecture">architecture</a></div></h3></div></div></td><td class="react-directory-row-name-cell-large-screen" colspan="1"><div class="react-directory-filename-column"><svg aria-hidden="true" focusable="false" role="img" class="icon-directory" viewBox="0 0 16 16" width="16" height="16" fill="currentColor" style="display: inline-block; user-select: none; vertical-align: text-bottom; overflow: visible;"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1H1.75Z"></path></svg><div class="overflow-hidden"><h3><div class="react-directory-truncate"><a title="architecture" aria-label="architecture, (Directory)" class="Link--primary" href="/K-PaaS/container-platform/tree/master/architecture">architecture</a></div></h3></div></div></td><td class="react-directory-row-commit-cell"><div><div class="react-directory-commit-message"><a data-pjax="true" title="Renaming K-PaaS" class="Link--secondary" href="/K-PaaS/container-platform/commit/3b9c417d770cf5498607aaee64835159ba54d5ee">Renaming K-PaaS</a></div></div></td><td><div class="react-directory-commit-age"><relative-time class="RelativeTime-sc-lqbqy3-0" datetime="2023-09-06T13:05:55.000+09:00" tense="past" title="Sep 6, 2023, 1:05 PM GMT+9"></relative-time></div></td></tr>
 ```
 
-i wanna a's title values aria-label=Directory or Files 
-and a data-pjax="true"'s  titles
-and relateive=time's date time 
+> i wanna a's title values aria-label=Directory or Files
+> and a data-pjax="true"'s  titles
+> and relateive=time's date time 
 
 tr folders as folder-row-0 ~ 6
 
@@ -205,7 +204,7 @@ tr folders as folder-row-0 ~ 6
 그리고 GPT가 다했음...
 
 - 중간 중간 Print값으로 값이 잘 들어가있는지 Debug 하는 것이 중요하고 
-- 암튼 힘들었따능 ?
+- 암튼 힘들었다.
 
 # 가이드에 쓸 UI 캡쳐
 ![[Pasted image 20240130170357.png]]
